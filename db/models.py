@@ -28,8 +28,12 @@ class Record(models.Model):
     time_eta = models.CharField(max_length=64, default='')
     time_etd = models.CharField(max_length=64, default='')
     enable = models.BooleanField(default=True)
+
+    # transist = models.PositiveSmallIntegerField(default=0)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
     def __unicode__(self):
         return '%s/%s/%s' % (self.ac_reg, self.time_eta, self.type)
